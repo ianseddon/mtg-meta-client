@@ -1,13 +1,17 @@
 <div class="formats row text-center"
      style="margin-bottom: 2em">
     <div ng-class="formatColSize">
-        <button ng-click="changeFormat(-1)">
+        <button class="btn"
+                ng-class="(-1 == searchParams.format_id) ? 'btn-primary' : 'btn-default'"
+                ng-click="changeFormat(-1)">
             All
         </button>
     </div>
     <div ng-class="formatColSize"
          ng-repeat="format in formats">
-        <button ng-click="changeFormat(format.id)">
+        <button class="btn"
+                ng-class="(format.id == searchParams.format_id) ? 'btn-primary' : 'btn-default'"
+                ng-click="changeFormat(format.id)">
             {{ format.name }}
         </button>
     </div>
