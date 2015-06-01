@@ -1,0 +1,35 @@
+<div class="formats row text-center"
+     style="margin-bottom: 2em">
+    <div ng-class="formatColSize">
+        <button ng-click="changeFormat(-1)">
+            All
+        </button>
+    </div>
+    <div ng-class="formatColSize"
+         ng-repeat="format in formats">
+        <button ng-click="changeFormat(format.id)">
+            {{ format.name }}
+        </button>
+    </div>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <h4>Recent {{ getFormatName(searchParams.format_id) }} Events</h4>
+    </li>
+    <li class="list-group-item list-group-item-warning"
+        ng-show="!events.length">
+        No recent events...
+    </li>
+    <a class="list-group-item"
+        href="/event/{{ event.id }}"
+        ng-repeat="event in events | filter: searchFilter">
+        <span class="badge">
+            {{ event.date || '05-23-15' }}
+        </span>
+        <span class="badge">
+            {{ getFormatName(event.format_id) }}
+        </span>
+        {{ event.name }}
+    </a>
+</ul>

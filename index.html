@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <base href="/">
+
+    <title>MTG Meta</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/site.css">
+
+    <!-- Angular Libraries -->
+    <script src="/vendor/js/angular.min.js"></script>
+    <script src="/vendor/js/angular-resource.min.js"></script>
+    <script src="/vendor/js/angular-route.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-brand">
+            <a href="/">MTGMETA</a>
+        </div>
+    </nav>
+
+    <div class="container"
+         ng-view></div>
+
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.routes.js"></script>
+
+    <script src="/app/shared/api/api.module.js"></script>
+    <script src="/app/shared/api/format/format.js"></script>
+    <script src="/app/shared/api/event/event.js"></script>
+    <script src="/app/shared/api/deck/deck.js"></script>
+
+    <script src="/app/shared/services/services.module.js"></script>
+    <script src="/app/shared/services/format/format.js"></script>
+
+    <script src="/app/components/components.module.js"></script>
+    <script src="/app/components/home/HomeController.js"></script>
+    <script src="/app/components/event/EventController.js"></script>
+    <script src="/app/components/deck/DeckController.js"></script>
+</body>
+</html>
