@@ -26,7 +26,7 @@
         No recent events...
     </li>
     <a class="list-group-item"
-        href="/event/{{ event.id }}"
+        href="#/event/{{ event.id }}"
         ng-repeat="event in filteredEvents = (events | filter: searchFilter)">
         <span class="badge">
             {{ event.date || '05-23-15' }}

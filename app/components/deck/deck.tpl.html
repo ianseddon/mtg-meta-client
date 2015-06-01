@@ -1,4 +1,4 @@
-<a href="/event/{{ deck.event_id }}">&lt;&lt; view event</a>
+<a href="#/event/{{ deck.event_id }}">&lt;&lt; view event</a>
 
 <h3>
     {{ deck.name }}
@@ -21,7 +21,7 @@
             </li>
 
             <a class="list-group-item"
-               href="/card/{{ card.id }}"
+               href="#/card/{{ card.id }}"
                ng-repeat="card in mainboard = (cards | filter: (card.sideboard == false))">
                 <span class="quantity">
                     {{ card.quantity }}
@@ -44,7 +44,7 @@
             </li>
 
             <a class="list-group-item"
-               href="/card/{{ card.id }}"
+               href="#/card/{{ card.id }}"
                ng-repeat="card in sideboard = (cards | filter: (card.sideboard != false))">
                 <span class="badge">
                     {{ card.quantity }}
