@@ -8,10 +8,10 @@
     Event.$inject = ['$resource'];
 
     function Event($resource) {
-        return $resource('http://localhost:9000/api/events/:id', {}, {
+        return $resource('https://rocky-mountain-5979.herokuapp.com/api/events/:id', {}, {
             decks: {
                 method: 'GET',
-                url: 'http://localhost:9000/api/events/:id/decks',
+                url: 'https://rocky-mountain-5979.herokuapp.com/api/events/:id/decks',
                 isArray: true
             }
         });

@@ -8,10 +8,10 @@
     Deck.$inject = ['$resource'];
 
     function Deck($resource) {
-        return $resource('http://localhost:9000/api/decks/:id', {}, {
+        return $resource('https://rocky-mountain-5979.herokuapp.com/api/decks/:id', {}, {
             cards: {
                 method: 'GET',
-                url: 'http://localhost:9000/api/decks/:id/cards',
+                url: 'https://rocky-mountain-5979.herokuapp.com/api/decks/:id/cards',
                 isArray: true
             }
         });

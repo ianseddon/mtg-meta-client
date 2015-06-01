@@ -8,6 +8,6 @@
     Format.$inject = ['$resource'];
 
     function Format($resource) {
-        return $resource('http://localhost:9000/api/formats/:id');
+        return $resource('https://rocky-mountain-5979.herokuapp.com/api/formats/:id');
     }
 })();
