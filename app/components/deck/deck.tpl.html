@@ -9,11 +9,18 @@
 
 <ul class="list-group">
     <li class="list-group-item">
-        <h4>Mainboard</h4>
+        <h4>Mainboard ({{mainboard.length}})</h4>
     </li>
+
+    <!-- Warning if no cards found -->
+    <li class="list-group-item list-group-item-warning"
+        ng-show="!mainboard.length">
+        No cards found.
+    </li>
+
     <a class="list-group-item"
        href="/card/{{ card.id }}"
-       ng-repeat="card in cards | filter: (card.sideboard == false)">
+       ng-repeat="card in mainboard = (cards | filter: (card.sideboard == false))">
         <span class="badge">
             {{ card.quantity }}
         </span>
@@ -22,11 +29,18 @@
 </ul>
 <ul class="list-group">
     <li class="list-group-item list-group-item-heading">
-        <h4>Sideboard</h4>
+        <h4>Sideboard ({{ sideboard.length || 0}})</h4>
     </li>
+
+    <!-- Warning if no cards found -->
+    <li class="list-group-item list-group-item-warning"
+        ng-show="!sideboard.length">
+        No cards found.
+    </li>
+
     <a class="list-group-item"
        href="/card/{{ card.id }}"
-       ng-repeat="card in cards | filter: (card.sideboard != false)">
+       ng-repeat="card in sideboard (cards | filter: (card.sideboard != false))">
         <span class="badge">
             {{ card.quantity }}
         </span>

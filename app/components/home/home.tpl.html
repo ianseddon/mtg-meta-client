@@ -18,12 +18,12 @@
         <h4>Recent {{ getFormatName(searchParams.format_id) }} Events</h4>
     </li>
     <li class="list-group-item list-group-item-warning"
-        ng-show="!events.length">
+        ng-show="!filteredEvents.length">
         No recent events...
     </li>
     <a class="list-group-item"
         href="/event/{{ event.id }}"
-        ng-repeat="event in events | filter: searchFilter">
+        ng-repeat="event in filteredEvents = (events | filter: searchFilter)">
         <span class="badge">
             {{ event.date || '05-23-15' }}
         </span>
