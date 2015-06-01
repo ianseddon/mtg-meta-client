@@ -11,17 +11,17 @@
     function routeConfig($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: '/app/components/home/home.tpl.html',
+                templateUrl: 'app/components/home/home.tpl.html',
                 controller: 'HomeController'
                 //title: 'MTG Meta'
             })
             .when('/event/:eventId', {
-                templateUrl: '/app/components/event/event.tpl.html',
+                templateUrl: 'app/components/event/event.tpl.html',
                 controller: 'EventController'
                 //title: 'Event'
             })
             .when('/deck/:deckId', {
-                templateUrl: '/app/components/deck/deck.tpl.html',
+                templateUrl: 'app/components/deck/deck.tpl.html',
                 controller: 'DeckController'
             });
 
